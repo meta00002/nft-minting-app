@@ -102,22 +102,22 @@ function App() {
   const [feedback, setFeedback] = useState(`Click buy to mint your NFT.`);
   const [mintAmount, setMintAmount] = useState(1);
   const [CONFIG, SET_CONFIG] = useState({
-    CONTRACT_ADDRESS: "",
-    SCAN_LINK: "",
+    CONTRACT_ADDRESS: "0x8fA68660D7F240D07e8eDEc24A95FC63ADdb034E",
+    SCAN_LINK: "https://etherscan.io/address/0x8fa68660d7f240d07e8edec24a95fc63addb034e",
     NETWORK: {
-      NAME: "",
-      SYMBOL: "",
-      ID: 0,
+      NAME: "Ethereum",
+      SYMBOL: "ETH",
+      ID: 1,
     },
-    NFT_NAME: "",
-    SYMBOL: "",
-    MAX_SUPPLY: 1,
-    WEI_COST: 0,
-    DISPLAY_COST: 0,
-    GAS_LIMIT: 0,
-    MARKETPLACE: "",
-    MARKETPLACE_LINK: "",
-    SHOW_BACKGROUND: false,
+    NFT_NAME: "MetaDoge",
+    SYMBOL: "MD",
+    MAX_SUPPLY: 10000,
+    WEI_COST: 4000000000000000000,
+    DISPLAY_COST: 0.005,
+    GAS_LIMIT: 285000,
+    MARKETPLACE: "Opeansea",
+    MARKETPLACE_LINK: "https://opensea.io/collection/meta-doge-v2-1",
+    SHOW_BACKGROUND: true,
   });
 
   const claimNFTs = () => {
@@ -162,8 +162,8 @@ function App() {
 
   const incrementMintAmount = () => {
     let newMintAmount = mintAmount + 1;
-    if (newMintAmount > 50) {
-      newMintAmount = 50;
+    if (newMintAmount > 3) {
+      newMintAmount = 3;
     }
     setMintAmount(newMintAmount);
   };
@@ -247,16 +247,7 @@ function App() {
                 textAlign: "center",
               }}
             >
-              <StyledButton
-                onClick={(e) => {
-                  window.open("/config/roadmap.pdf", "_blank");
-                }}
-                style={{
-                  margin: "5px",
-                }}
-              >
-                Roadmap
-              </StyledButton>
+              
               <StyledButton
                 style={{
                   margin: "5px",
